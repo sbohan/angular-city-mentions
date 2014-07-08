@@ -5,6 +5,8 @@
   "dependencies": {
     "socket.io": "~0.9.16",
     "express": "~3.2.6",
-    "jade": "~0.31.2"
+    "jade": "~0.31.2",
+    "twitter": "~0.2.9",
+    "dsjslib": "~0.6.10"
   }
 }

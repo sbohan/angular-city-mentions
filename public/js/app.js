@@ -11,7 +11,8 @@ angular.module('myApp', [
   'myApp.directives',
 
   // 3rd party dependencies
-  'btford.socket-io'
+  'btford.socket-io',
+  'nvd3ChartDirectives'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

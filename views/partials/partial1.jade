@@ -1,2 +1,32 @@
-p This is the partial for view 1.
-p The current time is {{time}}
+div(id="tooltip").hidden
+	p
+		span(id="city-label")
+
+div.container-fluid
+	div.row
+		div.col-md-7
+			h1 UK Cities mentioned on Twitter
+			sb-frequency-map(id="mapView")
+		div.col-md-5
+			h2 Latest Tweets
+			ul.tweets
+				li(ng-repeat="tweet in latestTweets.slice().reverse()")
+					div.col-md-1
+						img(ng-src="{{tweet.user.profile_image_url}}")
+					div.col-md-11
+						span {{tweet.text}}
+						span.author - by @{{tweet.user.name}}
+							span(ng-if="tweet.user.location") in {{tweet.user.location}}
+
+			h2 City Frequency Chart
+			nvd3-discrete-bar-chart(
+			id="frequencyChart"
+	        data="frequencyData"
+	        showXAxis="true"
+	        showYAxis="true"
+	        showValues="true"
+	        showLegend="true"
+	        margin="{left:70, top:40, bottom:120, right:50}"
+	        height="450"
+	        objectequality="true"
+	        xAxisRotateLabels="-65")
